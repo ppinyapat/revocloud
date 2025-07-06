@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Revocloud AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-white pt-16"> <!-- Added pt-16 for sticky nav -->
+
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center">
+        <a href="home.html" class="flex-shrink-0">
+          <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Revocloud AI</span>
+        </a>
+      </div>
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-4">
+          <a href="home.html" class="text-gray-700 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150">Home</a>
+          <a href="data_stack.html" class="text-gray-700 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150">Data Stack</a>
+          <a href="retail_solutions.html" class="text-gray-700 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150">Retail Solutions</a>
+          <a href="service.html" class="bg-blue-600 text-white shadow-md px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150" aria-current="page">Services</a>
+          <a href="contact.html" class="text-gray-700 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150">Contact</a>
+        </div>
+      </div>
+      <div class="-mr-2 flex md:hidden">
+        <button type="button" id="mobile-menu-button" class="bg-gray-100 inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" id="menu-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" id="x-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="md:hidden hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a href="home.html" class="block text-gray-700 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md text-base font-medium transition-colors duration-150">Home</a>
+      <a href="data_stack.html" class="block text-gray-700 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md text-base font-medium transition-colors duration-150">Data Stack</a>
+      <a href="retail_solutions.html" class="block text-gray-700 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md text-base font-medium transition-colors duration-150">Retail Solutions</a>
+      <a href="service.html" class="bg-blue-500 text-white block px-3 py-2 rounded-md text-base font-medium transition-colors duration-150" aria-current="page">Services</a>
+      <a href="contact.html" class="block text-gray-700 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md text-base font-medium transition-colors duration-150">Contact</a>
+    </div>
+  </div>
+</nav>
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const xIcon = document.getElementById('x-icon');
+
+  mobileMenuButton.addEventListener('click', () => {
+    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+    mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+    mobileMenu.classList.toggle('hidden');
+    menuIcon.classList.toggle('hidden');
+    xIcon.classList.toggle('hidden');
+  });
+</script>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-50 via-white to-purple-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                    From Augmented to
+                    <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        Autonomous AI
+                    </span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    We help Asian enterprises evolve from manual decision-making to fully autonomous AI-powered operations.
+                    Starting with human-in-loop AI agents, we gradually build towards complete business process automation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="space-y-16">
+                <!-- Phase 1: AI Integration Services -->
+                <div class="relative">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div> <!-- Text content first -->
+                            <div class="flex items-center mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-white"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.72v-.51a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg> <!-- Settings Icon -->
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-gray-900">AI Integration Services</h3>
+                                    <p class="text-lg text-blue-600 font-medium">Custom AI Decision Agents</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                                We start by acting as your AI integrator, building custom decision-support agents tailored to your specific business functions. These agents augment human decision-makers with intelligent recommendations.
+                            </p>
+                            <div class="space-y-4">
+                                <!-- Service: Supply Chain AI Agent -->
+                                <div class="border-l-4 border-l-blue-500 bg-white shadow-sm rounded-r-md">
+                                    <div class="p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Supply Chain AI Agent</h4>
+                                        <p class="text-gray-600 text-sm mb-3">Intelligent auto-replenishment and inventory optimization</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full border border-gray-300">20-30% improvement in logistics performance</span>
+                                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full border border-gray-300">17% reduction in inventory carrying costs</span>
+                                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full border border-gray-300">65% reduction in out-of-stock scenarios</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Service: Dynamic Pricing AI Agent -->
+                                <div class="border-l-4 border-l-blue-500 bg-white shadow-sm rounded-r-md">
+                                    <div class="p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Dynamic Pricing AI Agent</h4>
+                                        <p class="text-gray-600 text-sm mb-3">Real-time pricing optimization and promotional strategy</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full border border-gray-300">Up to $14M annual margin increase</span>
+                                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full border border-gray-300">Automated price testing and optimization</span>
+                                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full border border-gray-300">Market-responsive pricing strategies</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Service: Marketing Campaign AI Agent -->
+                                <div class="border-l-4 border-l-blue-500 bg-white shadow-sm rounded-r-md">
+                                    <div class="p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Marketing Campaign AI Agent</h4>
+                                        <p class="text-gray-600 text-sm mb-3">Personalized campaign optimization and customer targeting</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full border border-gray-300">Higher campaign ROI through better targeting</span>
+                                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full border border-gray-300">Automated A/B testing</span>
+                                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full border border-gray-300">Real-time budget reallocation</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Service: Customer Loyalty AI Agent -->
+                                <div class="border-l-4 border-l-blue-500 bg-white shadow-sm rounded-r-md">
+                                    <div class="p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Customer Loyalty AI Agent</h4>
+                                        <p class="text-gray-600 text-sm mb-3">Retention analysis and personalized engagement</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full border border-gray-300">Proactive churn prevention</span>
+                                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full border border-gray-300">Automated retention offers</span>
+                                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full border border-gray-300">Enhanced customer lifetime value</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div> <!-- Image content -->
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop" alt="AI Integration Services" class="rounded-lg shadow-xl"/>
+                                <div class="absolute inset-0 bg-gradient-to-tr from-blue-600 to-cyan-600 opacity-20 rounded-lg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2: Enterprise Decision Engine Platform -->
+                <div class="relative">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div class="lg:order-2"> <!-- Text content second -->
+                            <div class="flex items-center mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-white"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5V6H9.5a2.5 2.5 0 0 1 0-5Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5V6h2.5a2.5 2.5 0 0 0 0-5Z"/><path d="M12 6V5"/><path d="M4.5 8A2.5 2.5 0 0 0 2 10.5V12h2.5a2.5 2.5 0 0 0 0-5Z"/><path d="M19.5 8A2.5 2.5 0 0 1 22 10.5V12h-2.5a2.5 2.5 0 0 1 0-5Z"/><path d="M12 18v-1.5"/><path d="M7 12v2.5a2.5 2.5 0 0 0 5 0V12"/><path d="M17 12v2.5a2.5 2.5 0 0 1-5 0V12"/><path d="M12 12h0"/><path d="M9.5 15A2.5 2.5 0 0 0 12 17.5V19h-2.5a2.5 2.5 0 0 0 0-5Z"/><path d="M14.5 15A2.5 2.5 0 0 1 12 17.5V19h2.5a2.5 2.5 0 0 1 0-5Z"/><path d="M12 22v-2.5"/></svg> <!-- Brain Icon -->
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-gray-900">Enterprise Decision Engine Platform</h3>
+                                    <p class="text-lg text-blue-600 font-medium">Scalable AI Platform</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                                Building on our integration experience, we deliver a unified, system-agnostic AI Decision Engine that orchestrates intelligent agents across your entire enterprise workflow.
+                            </p>
+                            <div class="space-y-4">
+                                <!-- Service: Multi-Agent Orchestration -->
+                                <div class="border-l-4 border-l-purple-500 bg-white shadow-sm rounded-r-md">
+                                    <div class="p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Multi-Agent Orchestration</h4>
+                                        <p class="text-gray-600 text-sm mb-3">Collaborative AI agents working together across departments</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full border border-gray-300">Unified decision-making platform</span>
+                                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full border border-gray-300">Cross-functional AI coordination</span>
+                                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full border border-gray-300">Scalable agent deployment</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Service: Legacy System Integration -->
+                                <div class="border-l-4 border-l-purple-500 bg-white shadow-sm rounded-r-md">
+                                    <div class="p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Legacy System Integration</h4>
+                                        <p class="text-gray-600 text-sm mb-3">Seamless connection to existing ERP, CRM, and legacy systems</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full border border-gray-300">No system replacement required</span>
+                                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full border border-gray-300">Proprietary connector library</span>
+                                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full border border-gray-300">Minimal disruption deployment</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Service: Autonomous Decision Engine -->
+                                <div class="border-l-4 border-l-purple-500 bg-white shadow-sm rounded-r-md">
+                                    <div class="p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Autonomous Decision Engine</h4>
+                                        <p class="text-gray-600 text-sm mb-3">Progressive automation from human-in-loop to full autonomy</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full border border-gray-300">Configurable autonomy levels</span>
+                                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full border border-gray-300">Built-in governance controls</span>
+                                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full border border-gray-300">Continuous learning capabilities</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:order-1"> <!-- Image content first -->
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=600&h=400&fit=crop" alt="Enterprise Decision Engine Platform" class="rounded-lg shadow-xl"/>
+                                <div class="absolute inset-0 bg-gradient-to-tr from-purple-600 to-pink-600 opacity-20 rounded-lg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Autonomy Levels Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Levels of AI Autonomy
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Like self-driving cars, we progressively increase AI autonomy as trust and capability grow
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Level 1-2 -->
+                <div class="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg bg-white">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full">Level 1-2</span>
+                            <div class="flex space-x-1">
+                                <div class="w-3 h-3 rounded-full bg-blue-600"></div>
+                                <div class="w-3 h-3 rounded-full bg-gray-300"></div>
+                                <div class="w-3 h-3 rounded-full bg-gray-300"></div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Augmented Intelligence</h3>
+                        <p class="text-gray-600 mb-4">AI provides recommendations with human oversight</p>
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <p class="text-sm text-blue-800 font-medium">Example:</p>
+                            <p class="text-sm text-blue-700">Supply chain agent suggests reorder quantities for approval</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Level 3 -->
+                <div class="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg bg-white">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                             <span class="text-xs font-semibold bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full">Level 3</span>
+                            <div class="flex space-x-1">
+                                <div class="w-3 h-3 rounded-full bg-blue-600"></div>
+                                <div class="w-3 h-3 rounded-full bg-blue-600"></div>
+                                <div class="w-3 h-3 rounded-full bg-gray-300"></div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Conditional Autonomy</h3>
+                        <p class="text-gray-600 mb-4">AI executes decisions within predefined parameters</p>
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <p class="text-sm text-blue-800 font-medium">Example:</p>
+                            <p class="text-sm text-blue-700">Automatic reordering for standard items below threshold</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Level 4-5 -->
+                <div class="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg bg-white">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full">Level 4-5</span>
+                            <div class="flex space-x-1">
+                                <div class="w-3 h-3 rounded-full bg-blue-600"></div>
+                                <div class="w-3 h-3 rounded-full bg-blue-600"></div>
+                                <div class="w-3 h-3 rounded-full bg-blue-600"></div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">High Autonomy</h3>
+                        <p class="text-gray-600 mb-4">AI manages entire processes with minimal human intervention</p>
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <p class="text-sm text-blue-800 font-medium">Example:</p>
+                            <p class="text-sm text-blue-700">Fully autonomous pricing and inventory management</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vertical Solutions Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Industry-Specific Solutions
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Tailored AI agents for Asian retail, FMCG, and enterprise operations
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Retail & E-commerce -->
+                <div class="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg bg-white">
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> <!-- Building Icon -->
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Retail & E-commerce</h3>
+                        <p class="text-gray-600 mb-4">AI-powered solutions for modern retail operations</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Demand forecasting
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Inventory optimization
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Customer personalization
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Omnichannel coordination
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- FMCG & Consumer Goods -->
+                <div class="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg bg-white">
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mb-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> <!-- Target Icon -->
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">FMCG & Consumer Goods</h3>
+                        <p class="text-gray-600 mb-4">Intelligent supply chain and market optimization</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Supply chain planning
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Trade promotion optimization
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Market intelligence
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Distribution analytics
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Enterprise Operations -->
+                <div class="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg bg-white">
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.7 10.7 18 9.7 18 8.5c0-1.4-1.1-2.5-2.5-2.5S13 7.1 13 8.5c0 .4.1.8.3 1.2"/><path d="M12 6.5A2.5 2.5 0 0 1 14.5 4c1.4 0 2.5 1.1 2.5 2.5"/><path d="M9 14c-.2-1-.7-1.7-1.5-2.5C6.3 10.7 6 9.7 6 8.5c0-1.4 1.1-2.5 2.5-2.5S11 7.1 11 8.5c0 .4-.1.8-.3 1.2"/><path d="M12 6.5A2.5 2.5 0 0 0 9.5 4C8.1 4 7 5.1 7 6.5"/><path d="M12 13h.01"/><path d="M17.8 17.8a2.5 2.5 0 0 1 0-3.5c1.4-1.4 2.2-3.1 2.2-4.8h0c0-1.2-.4-2.3-1-3.2"/><path d="M6.2 17.8a2.5 2.5 0 0 0 0-3.5C4.8 12.9 4 11.2 4 9.5h0c0-1.2.4-2.3 1-3.2"/><path d="M12 22v-2.5"/><path d="m4.2 4.2 1.4 1.4"/><path d="M18.4 5.6 17 7"/></svg> <!-- Lightbulb Icon -->
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Enterprise Operations</h3>
+                        <p class="text-gray-600 mb-4">Cross-functional AI for business process automation</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Financial planning AI
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Operational intelligence
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Process automation
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Decision support systems
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Advantages Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Asia-First Advantage
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Built specifically for Asian enterprise needs and systems
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="border-none shadow-lg text-center rounded-lg bg-white p-6">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <p class="text-gray-700 font-medium">Deep integration with Asian enterprise systems</p>
+                </div>
+                <div class="border-none shadow-lg text-center rounded-lg bg-white p-6">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <p class="text-gray-700 font-medium">Local language and cultural optimization</p>
+                </div>
+                <div class="border-none shadow-lg text-center rounded-lg bg-white p-6">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <p class="text-gray-700 font-medium">Region-specific business logic and compliance</p>
+                </div>
+                <div class="border-none shadow-lg text-center rounded-lg bg-white p-6">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <p class="text-gray-700 font-medium">Proven track record with Southeast Asian enterprises</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Proven Results
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-white"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-2">20-50%</h3>
+                    <p class="text-gray-600">Reduction in supply chain errors</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-white"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-2">65%</h3>
+                    <p class="text-gray-600">Reduction in out-of-stock losses</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-white"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-2">3-5x</h3>
+                    <p class="text-gray-600">ROI within 12 months</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-white"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-2">40%</h3>
+                    <p class="text-gray-600">Of retail decisions will be AI-driven by 2028</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+                Ready to Start Your AI Journey?
+            </h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+                Begin with Phase 1 AI integration services and evolve towards full autonomous operations.
+                Let's build your enterprise AI decision engine together.
+            </p>
+            <div class="flex justify-center">
+                <a href="contact.html" class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg font-semibold rounded-md shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center">
+                    Start Phase 1 Integration
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-5 h-5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
