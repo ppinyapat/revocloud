@@ -179,3 +179,574 @@ footer {
         font-size: 1em;
     }
 }
+
+/* ================= About Page Styles ================= */
+
+/* About Page Specific Main Content */
+.about-page main {
+    /* Overriding general main padding if needed, or use as is */
+}
+
+/* About Hero Section */
+.about-hero {
+    background: linear-gradient(to bottom right, #e0f7fa, #ffffff, #f3e5f5); /* bg-gradient-to-br from-blue-50 via-white to-purple-50 */
+    padding: 4em 1em; /* py-20 (approx) */
+    text-align: center;
+}
+
+.about-hero .container {
+    max-width: 1000px; /* max-w-7xl (approx, consistent with nav) */
+    margin: 0 auto;
+    padding: 0 1em; /* px-4 sm:px-6 lg:px-8 */
+}
+
+.about-hero-title {
+    font-size: 2.5em; /* text-4xl lg:text-5xl */
+    font-weight: bold;
+    color: #1f2937; /* text-gray-900 */
+    margin-bottom: 1.5em; /* mb-6 */
+}
+
+.about-hero-title .highlight-text {
+    /* bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent */
+    background: linear-gradient(to right, #2563eb, #9333ea);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.about-hero-logo {
+    margin: 2em 0; /* my-8 */
+    display: flex;
+    justify-content: center;
+}
+
+.about-hero-logo img {
+    height: 10rem; /* h-40 */
+    width: auto;
+}
+
+.about-hero-subtitle {
+    font-size: 1.25em; /* text-xl */
+    color: #4b5563; /* text-gray-600 */
+    max-width: 48rem; /* max-w-3xl */
+    margin: 0 auto; /* mx-auto */
+    line-height: 1.6; /* leading-relaxed */
+}
+
+/* Responsive adjustments for About Hero */
+@media (max-width: 768px) {
+    .about-hero-title {
+        font-size: 2em; /* Smaller for mobile */
+    }
+    .about-hero-logo img {
+        height: 8rem; /* Smaller logo */
+    }
+    .about-hero-subtitle {
+        font-size: 1.1em;
+    }
+}
+
+/* Mission & Vision Section */
+.mission-vision-section {
+    padding: 4em 1em; /* py-20 */
+}
+
+.mission-vision-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.mission-vision-section .grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to single column */
+    gap: 3em; /* gap-12 */
+    align-items: center;
+}
+
+@media (min-width: 992px) { /* lg:grid-cols-2 */
+    .mission-vision-section .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.mission-vision-section .section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75em; /* space-x-3 */
+    margin-bottom: 1.5em; /* mb-6 */
+}
+
+.mission-vision-section .section-header i {
+    font-size: 1.75em; /* w-8 h-8 (approx) */
+}
+.mission-vision-section .section-header .icon-blue {
+    color: #2563eb; /* text-blue-600 */
+}
+.mission-vision-section .section-header .icon-purple {
+    color: #9333ea; /* text-purple-600 */
+}
+
+.mission-vision-section .section-header h2 {
+    font-size: 1.875em; /* text-3xl */
+    font-weight: bold;
+    color: #1f2937; /* text-gray-900 */
+    margin: 0;
+}
+
+.mission-vision-section p {
+    font-size: 1.125em; /* text-lg */
+    color: #4b5563; /* text-gray-600 */
+    line-height: 1.7; /* leading-relaxed */
+    margin-bottom: 1.5em; /* mb-6 (for paragraph after mission title) */
+}
+.mission-vision-section .text-content p:last-of-type {
+    margin-bottom: 0;
+}
+
+
+.mission-vision-section .image-content img {
+    width: 100%;
+    border-radius: 0.5em; /* rounded-lg */
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* shadow-xl */
+    /* For the gradient overlay:
+       .absolute .inset-0 .bg-gradient-to-tr .from-blue-600/20 .to-purple-600/20 .rounded-lg
+       This is harder to replicate directly on the img tag in CSS if the img is not wrapped.
+       A common way is to use a pseudo-element on a wrapper div, or have an actual overlay div.
+       For simplicity, I'm omitting the gradient overlay on the image for now.
+       It can be added with an extra wrapper div if critical.
+    */
+}
+
+/* Partnerships & Alliances Section */
+.partnerships-section {
+    padding: 4em 1em; /* py-20 */
+    background-color: #f9fafb; /* bg-gray-50 */
+}
+
+.partnerships-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.section-title-centered {
+    text-align: center;
+    margin-bottom: 4em; /* mb-16 */
+}
+
+.section-title-centered h2 {
+    font-size: 2.25em; /* text-3xl lg:text-4xl */
+    font-weight: bold;
+    color: #1f2937; /* text-gray-900 */
+    margin-bottom: 0.5em; /* mb-4 */
+}
+
+.section-title-centered p {
+    font-size: 1.25em; /* text-xl */
+    color: #4b5563; /* text-gray-600 */
+    max-width: 42rem; /* max-w-2xl */
+    margin: 0 auto; /* mx-auto */
+}
+
+.partnerships-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4em; /* space-y-16 */
+}
+
+.partner-category .partner-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em; /* gap-4 */
+    margin-bottom: 2em; /* mb-8 */
+}
+
+.partner-category .partner-header i {
+    font-size: 1.75em; /* w-8 h-8 */
+}
+/* .icon-blue and .icon-purple are already defined in Mission & Vision */
+
+.partner-category .partner-header h3 {
+    font-size: 1.5em; /* text-2xl */
+    font-weight: bold;
+    color: #374151; /* text-gray-800 */
+    text-align: center;
+}
+
+.badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2em; /* gap-8 md:gap-12 */
+}
+
+.badges-container.google-badges {
+    /* Replicating grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 */
+    /* This is simpler with flex-wrap, but for exact grid behavior: */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* default */
+    gap: 2em; /* gap-8 */
+}
+
+@media (min-width: 768px) { /* md:grid-cols-3 */
+    .badges-container.google-badges {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 992px) { /* lg:grid-cols-6 */
+    .badges-container.google-badges {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+
+.badge-item {
+    text-align: center;
+}
+
+.badge-item img {
+    height: 8rem; /* h-32 */
+    width: 8rem; /* w-32 */
+    object-fit: contain;
+    margin: 0 auto; /* mx-auto */
+}
+
+@media (min-width: 768px) { /* md:h-40 md:w-40 */
+    .badge-item img {
+        height: 10rem;
+        width: 10rem;
+    }
+}
+
+.google-badges .badge-item img {
+    mix-blend-mode: multiply; /* mix-blend-multiply */
+    padding: 0.5rem; /* p-2 */
+}
+
+/* Core Values Section */
+.core-values-section {
+    padding: 4em 1em; /* py-20 */
+    /* No background color specified in JSX, so it inherits from body or main */
+}
+
+.core-values-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+/* .section-title-centered is already defined */
+
+.values-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default */
+    gap: 2em; /* gap-8 */
+}
+
+@media (min-width: 768px) { /* md:grid-cols-2 */
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) { /* lg:grid-cols-4 */
+    .values-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.value-card {
+    /* border-none shadow-lg hover:shadow-xl transition-shadow duration-300 */
+    border: none;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* shadow-lg */
+    transition: box-shadow 0.3s ease-in-out;
+    padding: 1.5em; /* p-6 */
+    text-align: center;
+    border-radius: 0.375rem; /* Default card rounding if any, or from shadow */
+    background-color: #fff; /* Assuming cards have a white background */
+}
+
+.value-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); /* shadow-xl */
+}
+
+.value-icon-wrapper {
+    width: 3rem; /* w-12 */
+    height: 3rem; /* h-12 */
+    /* bg-gradient-to-r from-blue-600 to-purple-600 */
+    background: linear-gradient(to right, #2563eb, #9333ea);
+    border-radius: 0.375rem; /* rounded-lg (assuming lg means a bit more roundness for this element) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1em auto; /* mx-auto mb-4 */
+}
+
+.value-icon-wrapper i {
+    font-size: 1.5em; /* w-6 h-6 (approx) */
+    color: #ffffff; /* text-white */
+}
+
+.value-card h3 {
+    font-size: 1.25em; /* text-xl */
+    font-weight: 600; /* font-semibold */
+    color: #1f2937; /* text-gray-900 */
+    margin-bottom: 0.75em; /* mb-3 */
+}
+
+.value-card p {
+    color: #4b5563; /* text-gray-600 */
+    line-height: 1.6; /* leading-relaxed */
+    font-size: 1em;
+}
+
+/* Journey (Timeline) Section */
+.journey-section {
+    padding: 4em 1em; /* py-20 */
+}
+
+.journey-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+/* .section-title-centered is already defined */
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2em; /* space-y-8 */
+    position: relative; /* For potential future line drawing if desired */
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5em; /* space-x-6 */
+}
+
+.timeline-year {
+    flex-shrink: 0;
+    width: 5rem; /* w-20 */
+    height: 5rem; /* h-20 */
+    /* bg-gradient-to-r from-blue-600 to-purple-600 */
+    background: linear-gradient(to right, #2563eb, #9333ea);
+    border-radius: 50%; /* rounded-full */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-year span {
+    color: #ffffff; /* text-white */
+    font-weight: bold;
+    font-size: 1.125em; /* text-lg */
+}
+
+.timeline-event {
+    flex-grow: 1;
+}
+
+.timeline-event p {
+    font-size: 1.125em; /* text-lg */
+    color: #374151; /* text-gray-700 */
+    margin: 0; /* Reset default paragraph margin */
+    line-height: 1.6;
+}
+
+/* Optional: Add a connecting line for the timeline (basic example) */
+/* This would require more complex CSS for precise positioning if items vary in height */
+/* For a simple visual cue: */
+@media (min-width: 768px) {
+    .timeline {
+        padding-left: 3.25rem; /* (width of year circle / 2) + some space */
+    }
+    .timeline-item {
+        position: relative;
+        padding-left: 2.5rem; /* Space for the line and dot */
+    }
+    .timeline-item::before { /* The dot on the line */
+        content: '';
+        position: absolute;
+        left: -0.375rem; /* Adjust to center on the line */
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0.75rem;
+        height: 0.75rem;
+        background-color: #9333ea; /* purple-600 */
+        border-radius: 50%;
+        z-index: 1;
+    }
+    .timeline::before { /* The vertical line */
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 1rem; /* Start after first dot */
+        bottom: 1rem; /* End before last dot */
+        width: 2px;
+        background-color: #d1d5db; /* gray-300 */
+    }
+     .timeline-year { /* Adjust year position when line is present */
+        position: absolute;
+        left: -6.5rem; /* (width of year / 2) from the line */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+/* Leadership Team Section */
+.team-section {
+    padding: 4em 1em; /* py-20 */
+    background-color: #f9fafb; /* bg-gray-50 */
+}
+
+.team-section .container {
+    max-width: 1000px; /* Consistent with other sections */
+    margin: 0 auto;
+    padding: 0 1em;
+}
+/* .section-title-centered is already defined */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default single column */
+    gap: 2em; /* gap-8 */
+    max-width: 56rem; /* max-w-4xl */
+    margin: 0 auto; /* mx-auto for the grid itself if it's narrower than container */
+}
+
+@media (min-width: 768px) { /* md:grid-cols-2 */
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.team-card {
+    /* border-none shadow-lg hover:shadow-xl transition-shadow duration-300 */
+    border: none;
+    background-color: #fff; /* Assuming cards are on a gray bg, they should be white */
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* shadow-lg */
+    transition: box-shadow 0.3s ease-in-out;
+    padding: 1.5em; /* p-6 */
+    text-align: center;
+    border-radius: 0.375rem; /* Default card rounding */
+}
+
+.team-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); /* shadow-xl */
+}
+
+.team-member-image {
+    width: 6rem; /* w-24 */
+    height: 6rem; /* h-24 */
+    border-radius: 50%; /* rounded-full */
+    margin: 0 auto 1em auto; /* mx-auto mb-4 */
+    object-fit: cover; /* object-cover */
+}
+
+.team-card h3 {
+    font-size: 1.25em; /* text-xl */
+    font-weight: 600; /* font-semibold */
+    color: #1f2937; /* text-gray-900 */
+    margin-bottom: 0.25em; /* mb-1 */
+}
+
+.team-member-role {
+    color: #2563eb; /* text-blue-600 */
+    font-weight: 500; /* font-medium */
+    margin-bottom: 0.75em; /* mb-3 */
+    font-size: 1em;
+}
+
+.team-member-bio {
+    color: #4b5563; /* text-gray-600 */
+    font-size: 0.875em; /* text-sm */
+    line-height: 1.6; /* leading-relaxed */
+    margin-bottom: 1em; /* mb-4 */
+}
+
+.team-member-social {
+    display: flex;
+    justify-content: center;
+    gap: 0.75em; /* space-x-3 */
+}
+
+.social-button {
+    /* Button size="sm" variant="outline" className="p-2" */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em; /* p-2 (approx) */
+    border: 1px solid #d1d5db; /* outline implies border, gray-300 approx */
+    border-radius: 0.375rem; /* default button rounding */
+    color: #4b5563; /* Default text color for outline button */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.social-button:hover {
+    background-color: #f3f4f6; /* gray-100 for hover */
+    color: #1f2937;
+}
+
+.social-button i {
+    font-size: 1em; /* w-4 h-4 (approx for icons inside small buttons) */
+}
+
+/* CTA Section */
+.cta-section {
+    /* py-20 bg-gradient-to-r from-blue-600 to-purple-600 */
+    padding: 4em 1em;
+    background: linear-gradient(to right, #2563eb, #9333ea);
+    color: #ffffff; /* text-white (implied for children) */
+    text-align: center;
+}
+
+.cta-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.cta-section h2 {
+    /* text-3xl lg:text-4xl font-bold text-white mb-4 */
+    font-size: 2.25em;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 0.5em;
+}
+
+.cta-section p {
+    /* text-xl text-blue-100 mb-8 max-w-2xl mx-auto */
+    font-size: 1.25em;
+    color: #dbeafe; /* text-blue-100 */
+    margin-bottom: 2em;
+    max-width: 42rem; /* max-w-2xl */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.cta-button {
+    /* Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg" */
+    display: inline-block;
+    background-color: #ffffff; /* bg-white */
+    color: #2563eb; /* text-blue-600 */
+    padding: 0.75em 2em; /* px-8 py-3 (approx for text-lg) */
+    font-size: 1.125em; /* text-lg */
+    font-weight: 500;
+    border-radius: 0.375rem; /* Standard button rounding */
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #f3f4f6; /* hover:bg-gray-100 */
+}
+
+.cta-button i {
+    margin-left: 0.5em; /* ml-2 */
+}
