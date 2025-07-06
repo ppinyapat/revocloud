@@ -180,6 +180,401 @@ footer {
     }
 }
 
+/* Homepage Service Pillars Section */
+.home-service-pillars-section {
+    padding: 5em 1em; /* py-20 */
+    /* background-color: #ffffff; default white if not specified */
+}
+
+.home-service-pillars-section .container {
+    max-width: 1000px; /* max-w-7xl */
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+/* .section-title-centered is already defined and can be reused */
+/* from .partnerships-section in about.html styles if compatible */
+/* For Home.jsx, the title structure is similar: */
+.home-service-pillars-section .section-title-centered h2 {
+    font-size: 2.25em; /* text-3xl lg:text-4xl */
+    font-weight: bold;
+    color: #1f2937; /* text-gray-900 */
+    margin-bottom: 0.5em; /* mb-4 */
+}
+
+.home-service-pillars-section .section-title-centered p {
+    font-size: 1.25em; /* text-xl */
+    color: #4b5563; /* text-gray-600 */
+    max-width: 48rem; /* max-w-3xl */
+    margin: 0 auto 4em auto; /* mx-auto and mb-16 */
+}
+
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* default */
+    gap: 2em; /* gap-8 */
+}
+
+@media (min-width: 768px) { /* md:grid-cols-2 */
+    .pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) { /* lg:grid-cols-4 */
+    .pillars-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.pillar-card {
+    /* Card from Home.jsx: border-none shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col */
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* shadow-lg */
+    transition: box-shadow 0.3s ease-in-out;
+    border-radius: 0.5rem; /* Assuming default card rounding */
+    padding: 1.5em; /* p-6 */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* To make cards in a row equal height if items-stretch was intended */
+}
+
+.pillar-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); /* shadow-xl */
+}
+
+.pillar-card-icon-header {
+    display: flex;
+    align-items: center; /* items-center */
+    gap: 1em; /* space-x-4 */
+    margin-bottom: 1em; /* mb-4 */
+}
+
+.pillar-icon-wrapper {
+    /* w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0 */
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(to right, #2563eb, #9333ea);
+    border-radius: 0.5rem; /* rounded-lg */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.pillar-icon-wrapper i {
+    font-size: 1.5em; /* w-6 h-6 */
+    color: #ffffff;
+}
+
+.pillar-card-icon-header h3 {
+    font-size: 1.25em; /* text-xl */
+    font-weight: 600; /* font-semibold */
+    color: #1f2937; /* text-gray-900 */
+}
+
+.pillar-subtitle {
+    font-size: 0.875em; /* text-sm */
+    font-weight: 500; /* font-medium */
+    color: #2563eb; /* text-blue-600 */
+}
+
+.pillar-points {
+    list-style-type: none;
+    padding: 0;
+    margin: 1em 0 0 0; /* mt-4 */
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em; /* space-y-3 */
+    flex-grow: 1; /* Part of flex-grow flex flex-col on Card */
+}
+
+.pillar-points li {
+    display: flex;
+    align-items: flex-start; /* items-start */
+    color: #4b5563; /* text-gray-600 */
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.pillar-points li i {
+    /* w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0 */
+    color: #22c55e; /* text-green-500 */
+    margin-right: 0.75em; /* mr-3 */
+    margin-top: 0.125em; /* mt-1 (approx for alignment) */
+    flex-shrink: 0;
+    font-size: 1.1em; /* w-5 h-5 relative to text */
+}
+
+/* Homepage Value Propositions Section */
+.home-value-props-section {
+    padding: 5em 1em; /* py-20 */
+    background-color: #f9fafb; /* bg-gray-50 */
+}
+
+.home-value-props-section .container {
+    max-width: 1000px; /* max-w-7xl */
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+/* Using .section-title-centered from partnerships for consistency */
+.home-value-props-section .section-title-centered h2 {
+    font-size: 2.25em;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 0.5em;
+}
+.home-value-props-section .section-title-centered p {
+    font-size: 1.25em;
+    color: #4b5563;
+    max-width: 48rem; /* max-w-3xl */
+    margin: 0 auto 4em auto; /* mb-16 */
+}
+
+.value-props-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default */
+    gap: 2em; /* gap-8 */
+}
+
+@media (min-width: 768px) { /* md:grid-cols-2 */
+    .value-props-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.value-prop-card {
+    /* Card: border-none shadow-lg hover:shadow-xl transition-shadow duration-300 */
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* shadow-lg */
+    transition: box-shadow 0.3s ease-in-out;
+    border-radius: 0.5rem; /* Default card rounding */
+    padding: 2em; /* p-8 */
+}
+
+.value-prop-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); /* shadow-xl */
+}
+
+.value-prop-header {
+    display: flex;
+    align-items: flex-start; /* items-start */
+    gap: 1em; /* space-x-4 */
+    margin-bottom: 1.5em; /* mb-6 */
+}
+
+.value-prop-icon-wrapper {
+    /* w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0 */
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(to right, #2563eb, #9333ea);
+    border-radius: 0.5rem; /* rounded-lg */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.value-prop-icon-wrapper i {
+    font-size: 1.5em; /* w-6 h-6 */
+    color: #ffffff;
+}
+
+.value-prop-header h3 {
+    font-size: 1.25em; /* text-xl */
+    font-weight: 600; /* font-semibold */
+    color: #1f2937; /* text-gray-900 */
+    margin-bottom: 0.75em; /* mb-3 */
+}
+
+.value-prop-description {
+    color: #4b5563; /* text-gray-600 */
+    line-height: 1.6; /* leading-relaxed */
+    font-size: 1em;
+}
+
+.value-prop-benefits {
+    list-style-type: none;
+    padding: 0;
+    margin: 1em 0 0 0; /* mt-4 */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em; /* space-y-2 */
+}
+
+.value-prop-benefits li {
+    display: flex;
+    align-items: center; /* items-center */
+    font-size: 0.875em; /* text-sm */
+    color: #4b5563; /* text-gray-600 */
+}
+
+.value-prop-benefits li i {
+    /* w-4 h-4 text-green-500 mr-3 flex-shrink-0 */
+    font-size: 1em; /* w-4 h-4 relative to text-sm */
+    color: #22c55e; /* text-green-500 */
+    margin-right: 0.75em; /* mr-3 */
+    flex-shrink: 0;
+}
+
+.revocloud-difference-box {
+    margin-top: 3em; /* mt-12 */
+    text-align: center;
+    background-color: #ffffff; /* bg-white */
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* shadow-lg */
+    padding: 2em; /* p-8 */
+    max-width: 56rem; /* max-w-4xl */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.revocloud-difference-box h3 {
+    font-size: 1.5em; /* text-2xl */
+    font-weight: bold;
+    color: #1f2937; /* text-gray-900 */
+    margin-bottom: 1em; /* mb-4 */
+}
+
+.revocloud-difference-box > p { /* Direct child p */
+    font-size: 1.125em; /* text-lg */
+    color: #4b5563; /* text-gray-600 */
+    margin-bottom: 1.5em; /* mb-6 */
+    line-height: 1.6;
+}
+
+.quote-box {
+    /* bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6 mt-6 text-center */
+    background: linear-gradient(to right, #eff6ff, #f5f3ff); /* blue-50 to purple-50 */
+    border-radius: 0.5rem; /* rounded-lg */
+    padding: 1.5em; /* p-6 */
+    margin-top: 1.5em; /* mt-6 */
+    text-align: center;
+}
+
+.quote-box p {
+    /* text-2xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent */
+    font-size: 1.5em; /* text-2xl */
+    font-weight: 600; /* font-semibold */
+    background: linear-gradient(to right, #2563eb, #9333ea); /* blue-600 to purple-600 */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 0;
+}
+
+/* Homepage CTA Section */
+.home-cta-section {
+    /* py-20 bg-gradient-to-r from-blue-600 to-purple-600 */
+    padding: 5em 1em;
+    background: linear-gradient(to right, #2563eb, #9333ea); /* blue-600 to purple-600 */
+    color: #ffffff; /* Default text color for section */
+    text-align: center;
+}
+
+.home-cta-section .container {
+    max-width: 1000px; /* max-w-7xl */
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.home-cta-section h2 {
+    /* text-3xl lg:text-4xl font-bold text-white mb-4 */
+    font-size: 2.25em; /* text-3xl */
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 0.5em; /* mb-4 */
+}
+
+@media (min-width: 1024px) { /* lg:text-4xl */
+    .home-cta-section h2 {
+        font-size: 2.5em;
+    }
+}
+
+.home-cta-section p {
+    /* text-xl text-blue-100 mb-8 max-w-2xl mx-auto */
+    font-size: 1.25em; /* text-xl */
+    color: #dbeafe; /* text-blue-100 */
+    margin-bottom: 2em; /* mb-8 */
+    max-width: 42rem; /* max-w-2xl */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.button.button-cta-hollow {
+    /* Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg" */
+    display: inline-block;
+    background-color: #ffffff; /* bg-white */
+    color: #2563eb; /* text-blue-600 */
+    padding: 0.75em 2em; /* px-8 py-3 for text-lg */
+    font-size: 1.125em; /* text-lg */
+    border-radius: 0.375rem;
+    text-decoration: none;
+    font-weight: 500;
+    border: 2px solid transparent; /* For consistent sizing with potential bordered buttons */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.button.button-cta-hollow:hover {
+    background-color: #f3f4f6; /* hover:bg-gray-100 */
+}
+
+.button.button-cta-hollow i {
+    margin-left: 0.5em; /* ml-2 */
+}
+
+/* Homepage Stats Section */
+.home-stats-section {
+    padding: 4em 1em; /* py-16 */
+    background-color: #f9fafb; /* bg-gray-50 */
+}
+
+.home-stats-section .container {
+    max-width: 1000px; /* max-w-7xl */
+    margin: 0 auto;
+    padding: 0 1em; /* px-4 sm:px-6 lg:px-8 */
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* grid-cols-2 */
+    gap: 2em; /* gap-8 */
+}
+
+@media (min-width: 768px) { /* md:grid-cols-3 */
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.25em; /* text-3xl lg:text-4xl */
+    font-weight: bold;
+    color: #1f2937; /* text-gray-900 */
+    margin-bottom: 0.25em; /* mb-2 */
+}
+
+.stat-label {
+    color: #4b5563; /* text-gray-600 */
+    font-size: 1em;
+}
+
+@media (min-width: 1024px) { /* lg:text-4xl for stat-number */
+    .stat-number {
+        font-size: 2.5em;
+    }
+}
+
 /* Contact Form Section */
 .contact-form-section {
     padding: 4em 1em; /* py-20 */
@@ -380,6 +775,131 @@ footer {
     line-height: 1.6;
     margin: 0;
 }
+
+/* ================= Homepage Styles (from Home.jsx) ================= */
+
+/* Homepage Hero Section */
+.home-hero-section {
+    position: relative;
+    background-color: #000000; /* bg-black */
+    color: #ffffff; /* text-white */
+    text-align: center;
+    padding: 5em 1em; /* py-20 lg:py-32 (approx) */
+    overflow: hidden; /* To contain absolute positioned children if necessary */
+}
+
+.home-hero-bg-image-wrapper {
+    position: absolute;
+    inset: 0; /* Equivalent to top, right, bottom, left = 0 */
+    width: 100%;
+    height: 100%;
+}
+
+.home-hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* object-cover */
+    opacity: 0.5; /* opacity-50 */
+}
+
+.home-hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    /* bg-black/50 bg-gradient-to-br from-blue-900/40 to-purple-900/40 */
+    background-color: rgba(0,0,0,0.5); /* bg-black/50 */
+    /* The gradient is tricky to layer directly with another bg color opacity in plain CSS.
+       This will be a solid overlay. For a true gradient overlay on top of an image,
+       often multiple background-images are used or a pseudo-element.
+       For now, a semi-transparent black overlay is applied.
+       A more complex gradient overlay:
+       background: linear-gradient(to bottom right, rgba(23, 37, 84, 0.4), rgba(88, 28, 135, 0.4)), rgba(0,0,0,0.5);
+       However, this might not look exactly like the Tailwind version.
+       Let's use a simpler approach for now.
+    */
+}
+
+.home-hero-content {
+    position: relative; /* To sit on top of the background image and overlay */
+    z-index: 1;
+    max-width: 1000px; /* max-w-7xl approx */
+}
+
+.home-hero-content h1 {
+    /* text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight */
+    font-size: 2.5em; /* Base size, adjust with media queries */
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 0.5em;
+    line-height: 1.2; /* leading-tight */
+}
+
+.home-hero-content h1 .highlight-text {
+    /* bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent */
+    background: linear-gradient(to right, #3b82f6, #a855f7); /* blue-500 to purple-600 */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.home-hero-logo {
+    margin: 2em 0; /* my-8 */
+    display: flex;
+    justify-content: center;
+}
+
+.home-hero-logo img {
+    height: 10rem; /* h-40 */
+    width: auto;
+}
+
+.home-hero-content p {
+    /* text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed */
+    font-size: 1.25em;
+    color: #e5e7eb; /* text-gray-200 */
+    margin-bottom: 2em;
+    max-width: 48rem; /* max-w-3xl */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.home-hero-cta .button.button-gradient {
+    /* bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg */
+    background: linear-gradient(to right, #2563eb, #9333ea); /* blue-600 to purple-600 */
+    color: #ffffff;
+    padding: 0.75em 2em; /* px-8 py-3 for text-lg */
+    font-size: 1.125em; /* text-lg */
+    border-radius: 0.375rem;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    border: none; /* Reset button border if it's a button tag */
+    transition: background-image 0.3s ease; /* This won't transition gradient smoothly without more work */
+}
+
+.home-hero-cta .button.button-gradient:hover {
+    background: linear-gradient(to right, #1d4ed8, #7e22ce); /* hover:from-blue-700 hover:to-purple-700 */
+}
+
+.home-hero-cta .button.button-gradient i {
+    margin-left: 0.5em; /* ml-2 */
+}
+
+/* Responsive adjustments for Homepage Hero */
+@media (min-width: 640px) { /* sm:text-6xl */
+    .home-hero-content h1 {
+        font-size: 3.75em;
+    }
+}
+@media (min-width: 1024px) { /* lg:text-7xl */
+    .home-hero-content h1 {
+        font-size: 4.5em;
+    }
+     .home-hero-section {
+        padding: 8em 1em; /* lg:py-32 */
+    }
+}
+
 
 /* Thank You Page Styles */
 .thank-you-page main {
