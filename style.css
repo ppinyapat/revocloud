@@ -180,6 +180,271 @@ footer {
     }
 }
 
+/* Contact Form Section */
+.contact-form-section {
+    padding: 4em 1em; /* py-20 */
+}
+
+.contact-form-section .container {
+    max-width: 48rem; /* max-w-3xl, approx for a form container */
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.form-card {
+    background-color: #ffffff;
+    border-radius: 0.5rem; /* rounded-lg from Card component */
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* shadow-xl */
+    /* border-none from Card component */
+    padding: 2em; /* Approximation for CardHeader + CardContent padding */
+}
+
+.form-header {
+    margin-bottom: 2em;
+}
+
+.form-header i {
+    font-size: 1.5em; /* w-6 h-6 */
+    color: #2563eb; /* text-blue-600 */
+    margin-right: 0.5em; /* mr-3 */
+    vertical-align: middle;
+}
+
+.form-header h2 {
+    font-size: 1.5em; /* text-2xl */
+    font-weight: bold;
+    color: #1f2937; /* text-gray-900 */
+    display: inline; /* To align with icon */
+    vertical-align: middle;
+}
+
+.form-header p {
+    color: #4b5563; /* text-gray-600 */
+    margin-top: 0.5em;
+}
+
+.contact-form-actual .form-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default single column */
+    gap: 1em; /* gap-4 */
+    margin-bottom: 1.5em; /* space-y-6 on form implies margin for children groups */
+}
+
+@media (min-width: 768px) { /* md:grid-cols-2 */
+    .contact-form-actual .form-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.contact-form-actual .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em; /* space-y-2 in React */
+}
+.contact-form-actual .form-group:last-of-type { /* last direct child of form */
+    margin-bottom: 1.5em;
+}
+
+
+.contact-form-actual label {
+    font-weight: 500; /* For Label component */
+    color: #374151; /* Standard label color */
+    font-size: 0.875em;
+}
+
+.contact-form-actual input[type="text"],
+.contact-form-actual input[type="email"],
+.contact-form-actual input[type="tel"],
+.contact-form-actual select,
+.contact-form-actual textarea {
+    width: 100%;
+    padding: 0.75em 1em;
+    border: 1px solid #d1d5db; /* gray-300 border */
+    border-radius: 0.375rem; /* rounded-md */
+    font-size: 1em;
+    color: #1f2937;
+    box-sizing: border-box; /* Important for width and padding */
+}
+
+.contact-form-actual input::placeholder,
+.contact-form-actual textarea::placeholder {
+    color: #9ca3af; /* gray-400 placeholder */
+}
+
+.contact-form-actual select {
+    /* For custom arrow, more complex CSS is needed. Basic styling for now. */
+    appearance: none; /* Remove default arrow on some browsers */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007AFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 0.75em top 50%;
+    background-size: 0.65em auto;
+    padding-right: 2.5em; /* Make space for arrow */
+}
+.contact-form-actual select option[disabled] {
+    color: #9ca3af;
+}
+
+
+.form-submit-button {
+    /* w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 */
+    width: 100%;
+    background: linear-gradient(to right, #2563eb, #9333ea);
+    color: #ffffff;
+    padding: 0.75em 1em; /* py-3 approx */
+    font-size: 1em;
+    font-weight: 500;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.3s, background-image 0.3s; /* For gradient hover */
+}
+
+.form-submit-button:hover {
+    background: linear-gradient(to right, #1d4ed8, #7e22ce); /* hover:from-blue-700 hover:to-purple-700 */
+}
+
+.form-submit-button i {
+    margin-left: 0.5em; /* ml-2 */
+}
+
+/* Contact Info Section */
+.contact-info-section {
+    padding: 3em 1em; /* A bit less padding than form or hero */
+    background-color: #f9fafb; /* bg-gray-50, or similar light background */
+}
+
+.contact-info-section .container {
+    max-width: 1000px; /* Standard container width */
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default */
+    gap: 2em; /* gap-8 from original component structure (approx) */
+}
+
+@media (min-width: 768px) { /* md:grid-cols-2 */
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) { /* lg:grid-cols-4 (if it was a top-level section, but as sub-items, 2 cols is fine) */
+    /* If it was 4 distinct items in a row, we'd use lg:grid-cols-4.
+       The original JSX implies these are list items. Let's stick to 2 columns for now,
+       or make it 4 if the design intends them to be more compact.
+       Given the content, 2 columns for info items seems reasonable.
+       If the original was more like small cards in a row of 4, then:
+       .info-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); } or specific lg:grid-cols-4
+    */
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start; /* Align icon to top of text block */
+    gap: 1em;
+    padding: 1em;
+    background-color: #ffffff;
+    border-radius: 0.375rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.info-icon {
+    font-size: 1.5em; /* Approx w-8 h-8 for icon container */
+    color: #2563eb; /* text-blue-600 */
+    width: 2.5em; /* Give icon wrapper a defined width */
+    height: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #e0f2fe; /* light blue background for icon */
+}
+
+.info-icon i {
+    line-height: 1; /* Ensure icon is centered if it has inherent line-height */
+}
+
+.info-content h3 {
+    font-size: 1.25em; /* text-lg */
+    font-weight: 600; /* font-semibold */
+    color: #1f2937; /* text-gray-900 */
+    margin: 0 0 0.5em 0;
+}
+
+.info-content p {
+    font-size: 0.95em;
+    color: #4b5563; /* text-gray-600 */
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Thank You Page Styles */
+.thank-you-page main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 160px); /* Adjust based on header/footer height, ensure content is centered vertically */
+    text-align: center;
+    padding: 2em 1em;
+}
+
+.thank-you-page .container {
+    max-width: 36rem; /* max-w-md */
+    margin: 0 auto;
+}
+
+.thank-you-content {
+    /* Styles from the React component's submitted state */
+}
+
+.thank-you-icon-wrapper {
+    width: 4rem; /* w-16 */
+    height: 4rem; /* h-16 */
+    background-color: #dcfce7; /* bg-green-100 */
+    border-radius: 50%; /* rounded-full */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5em auto; /* mx-auto mb-6 */
+}
+
+.thank-you-icon-wrapper i {
+    font-size: 2em; /* w-8 h-8 (approx) */
+    color: #16a34a; /* text-green-600 */
+}
+
+.thank-you-content h2 {
+    font-size: 1.5em; /* text-2xl */
+    font-weight: bold;
+    color: #1f2937; /* text-gray-900 */
+    margin-bottom: 1em; /* mb-4 */
+}
+
+.thank-you-content p {
+    color: #4b5563; /* text-gray-600 */
+    margin-bottom: 1.5em; /* mb-6 */
+    line-height: 1.6;
+}
+
+.thank-you-button {
+    /* className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700" */
+    display: inline-block;
+    background: linear-gradient(to right, #2563eb, #9333ea);
+    color: #ffffff;
+    padding: 0.75em 1.5em;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s, background-image 0.3s;
+}
+
+.thank-you-button:hover {
+    background: linear-gradient(to right, #1d4ed8, #7e22ce);
+}
+
 /* ================= About Page Styles ================= */
 
 /* About Page Specific Main Content */
@@ -749,4 +1014,73 @@ footer {
 
 .cta-button i {
     margin-left: 0.5em; /* ml-2 */
+}
+
+/* ================= Contact Page Styles ================= */
+
+/* Contact Hero Section */
+.contact-hero {
+    background: linear-gradient(to bottom right, #e0f7fa, #ffffff, #f3e5f5); /* bg-gradient-to-br from-blue-50 via-white to-purple-50 */
+    padding: 4em 1em; /* py-20 (approx) */
+    text-align: center;
+}
+
+.contact-hero .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.contact-hero-title {
+    font-size: 2.5em; /* text-4xl lg:text-5xl */
+    font-weight: bold;
+    color: #1f2937; /* text-gray-900 */
+    margin-bottom: 0.75em; /* mb-6 */
+}
+
+.contact-hero-title .highlight-text {
+    /* bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent */
+    background: linear-gradient(to right, #2563eb, #9333ea);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.contact-hero-subtitle {
+    font-size: 1.25em; /* text-xl */
+    color: #4b5563; /* text-gray-600 */
+    max-width: 48rem; /* max-w-3xl */
+    margin: 0 auto 1.5em auto; /* mx-auto mb-8 (approx) */
+    line-height: 1.6; /* leading-relaxed */
+}
+
+.contact-hero-chat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em; /* gap-2 */
+    color: #2563eb; /* text-blue-600 */
+}
+
+.contact-hero-chat i {
+    font-size: 1.125em; /* w-5 h-5 (approx) */
+}
+
+.contact-hero-chat span {
+    font-size: 1.125em; /* text-lg */
+    font-weight: 500; /* font-medium */
+}
+
+
+/* Responsive adjustments for Contact Hero */
+@media (max-width: 768px) {
+    .contact-hero-title {
+        font-size: 2em;
+    }
+    .contact-hero-subtitle {
+        font-size: 1.1em;
+    }
+    .contact-hero-chat span {
+        font-size: 1em;
+    }
 }
