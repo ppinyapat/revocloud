@@ -3,77 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Revocloud Inspired</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Contact Us - Revocloud AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                <i class="fas fa-cloud"></i> MyPortfolio
-            </div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-                <li><a href="#">Projects</a></li> <!-- Placeholder -->
-            </ul>
-        </nav>
-    </header>
+<body class="min-h-screen bg-white">
 
-    <main class="contact-page">
-        <!-- Hero Section from Contact.jsx -->
-        <section class="contact-hero">
-            <div class="container">
-                <h1 class="contact-hero-title">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-50 via-white to-purple-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                     Get in
-                    <span class="highlight-text">Touch</span>
+                    <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        Touch
+                    </span>
                 </h1>
-                <p class="contact-hero-subtitle">
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
                     Ready to transform your business with AI? Our team of experts is here to help you
                     discover the perfect AI solution for your unique needs and goals.
                 </p>
-                <div class="contact-hero-chat">
-                    <i class="fas fa-envelope"></i> <!-- Mail icon placeholder -->
-                    <span>Chat with us: inquiries@revocloud.io</span>
+                <div class="flex items-center justify-center gap-2 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <span class="text-lg font-medium">Chat with us: inquiries@revocloud.io</span>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Form and Contact Info will be added here -->
-        <section class="contact-form-section">
-            <div class="container">
-                <div class="form-card">
-                    <div class="form-header">
-                        <i class="fas fa-paper-plane"></i> <!-- MessageSquare placeholder / Send icon -->
-                        <h2>Send us a Message</h2>
-                        <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+    <!-- Contact Form Section -->
+    <section class="py-20">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="border-none shadow-xl rounded-lg bg-white">
+                <div class="p-6 sm:p-8">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-3 text-blue-600"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            Send us a Message
+                        </h2>
+                        <p class="text-gray-600 mt-1">
+                            Fill out the form below and we'll get back to you within 24 hours.
+                        </p>
                     </div>
-                    <form action="thank-you.html" method="GET" class="contact-form-actual">
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="name">Full Name *</label>
-                                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    <form action="contact-submitted.html" method="GET" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <label for="name" class="block text-sm font-medium text-gray-700">Full Name *</label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" placeholder="john@company.com" required>
-                            </div>
-                        </div>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="company">Company</label>
-                                <input type="text" id="company" name="company" placeholder="Your Company">
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                            <div class="space-y-2">
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email Address *</label>
+                                <input type="email" id="email" name="email" placeholder="john@company.com" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="service">Service Interest</label>
-                            <select id="service" name="service">
+
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <label for="company" class="block text-sm font-medium text-gray-700">Company</label>
+                                <input type="text" id="company" name="company" placeholder="Your Company" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            </div>
+                            <div class="space-y-2">
+                                <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="service" class="block text-sm font-medium text-gray-700">Service Interest</label>
+                            <select id="service" name="service" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
                                 <option value="" disabled selected>Select a service</option>
                                 <option value="Machine Learning Platform">Machine Learning Platform</option>
                                 <option value="AI-Powered Analytics">AI-Powered Analytics</option>
@@ -85,62 +81,23 @@
                                 <option value="Consultation Only">Consultation Only</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your project and how we can help..." required></textarea>
+
+                        <div class="space-y-2">
+                            <label for="message" class="block text-sm font-medium text-gray-700">Message *</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project and how we can help..." rows="4" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
                         </div>
-                        <button type="submit" class="form-submit-button">
-                            Send Message <i class="fas fa-paper-plane"></i> <!-- Send icon -->
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 px-4 rounded-md shadow-sm font-semibold flex items-center justify-center">
+                            Send Message
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-4 h-4"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                         </button>
                     </form>
                 </div>
             </div>
-        </section>
-
-        <!-- Contact Information Section -->
-        <section class="contact-info-section">
-            <div class="container">
-                <div class="info-grid">
-                    <!-- Headquarters -->
-                    <div class="info-item">
-                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <div class="info-content">
-                            <h3>Headquarters</h3>
-                            <p>123 Innovation Drive<br>San Francisco, CA 94105<br>United States</p>
-                        </div>
-                    </div>
-                    <!-- Phone -->
-                    <div class="info-item">
-                        <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
-                        <div class="info-content">
-                            <h3>Phone</h3>
-                            <p>+1 (555) 123-4567<br>Mon-Fri 9AM-6PM PST</p>
-                        </div>
-                    </div>
-                    <!-- Email -->
-                    <div class="info-item">
-                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
-                        <div class="info-content">
-                            <h3>Email</h3>
-                            <p>hello@revocloud.ai<br>support@revocloud.ai</p>
-                        </div>
-                    </div>
-                    <!-- Business Hours -->
-                    <div class="info-item">
-                        <div class="info-icon"><i class="fas fa-clock"></i></div>
-                        <div class="info-content">
-                            <h3>Business Hours</h3>
-                            <p>Monday - Friday: 9AM - 6PM PST<br>Weekend: Emergency support only</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 My Code Showcase. Inspired by RevoCloud.</p>
-    </footer>
-
+        </div>
+    </section>
+    <!-- The contactInfo array data is not directly used in the form page as per the React component.
+         If it needs to be displayed, it would be a separate section.
+         For now, focusing on the form and thank you page. -->
 </body>
 </html>
