@@ -3,294 +3,478 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RevoCloud</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Prism.js CSS (using a CDN for simplicity) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Revocloud AI Solutions - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                <i class="fas fa-cloud"></i> RevoCloud
-            </div>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="#">Projects</a></li> <!-- Placeholder -->
-            </ul>
-        </nav>
-    </header>
+<body class="min-h-screen bg-white pt-16"> <!-- Added pt-16 to body for sticky nav -->
 
-    <main class="home-page">
-        <!-- Hero Section from Home.jsx -->
-        <section class="home-hero-section">
-            <div class="home-hero-bg-image-wrapper">
-                <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/e894b56cc_the-entity.jpg" alt="AI background" class="home-hero-bg-image">
-                <div class="home-hero-bg-overlay"></div>
-            </div>
-            <div class="home-hero-content container">
-                <h1>
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center">
+        <a href="index.html" class="flex-shrink-0">
+          <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Revocloud AI</span>
+        </a>
+      </div>
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-4">
+          <a href="index.html" class="bg-blue-600 text-white shadow-md px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150" aria-current="page">Home</a>
+          <a href="data_stack.html" class="text-gray-700 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150">Data Stack</a>
+          <a href="retail_solutions.html" class="text-gray-700 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150">Retail Solutions</a>
+          <a href="service.html" class="text-gray-700 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150">Services</a>
+          <a href="about.html" class="text-gray-700 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150">About Us</a>
+          <a href="contact.html" class="text-gray-700 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150">Contact</a>
+        </div>
+      </div>
+      <div class="-mr-2 flex md:hidden">
+        <button type="button" id="mobile-menu-button" class="bg-gray-100 inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" id="menu-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" id="x-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="md:hidden hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a href="index.html" class="bg-blue-500 text-white block px-3 py-2 rounded-md text-base font-medium transition-colors duration-150" aria-current="page">Home</a>
+      <a href="data_stack.html" class="block text-gray-700 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md text-base font-medium transition-colors duration-150">Data Stack</a>
+      <a href="retail_solutions.html" class="block text-gray-700 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md text-base font-medium transition-colors duration-150">Retail Solutions</a>
+      <a href="service.html" class="block text-gray-700 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md text-base font-medium transition-colors duration-150">Services</a>
+      <a href="about.html" class="block text-gray-700 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md text-base font-medium transition-colors duration-150">About Us</a>
+      <a href="contact.html" class="block text-gray-700 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md text-base font-medium transition-colors duration-150">Contact</a>
+    </div>
+  </div>
+</nav>
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const xIcon = document.getElementById('x-icon');
+
+  mobileMenuButton.addEventListener('click', () => {
+    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+    mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+    mobileMenu.classList.toggle('hidden');
+    menuIcon.classList.toggle('hidden');
+    xIcon.classList.toggle('hidden');
+  });
+</script>
+
+    <!-- Hero Section -->
+    <section class="relative bg-black text-white">
+        <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/e894b56cc_the-entity.jpg" alt="AI background" class="absolute inset-0 w-full h-full object-cover opacity-50"/>
+        <div class="absolute inset-0 bg-black/50 bg-gradient-to-br from-blue-900/40 to-purple-900/40"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+            <div class="text-center">
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
                     Revolutionize Your
-                    <span class="highlight-text"> Business</span>
-                    <br>
+                    <span class="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                        Business
+                    </span>
+                    <br />
                     with AI
                 </h1>
-                <div class="home-hero-logo">
-                    <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/16c87ff35_Revo_logo_1st.png" alt="Revocloud Logo">
+
+                <div class="my-8 flex justify-center">
+                    <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/16c87ff35_Revo_logo_1st.png" alt="Revocloud Logo" class="h-40 w-auto"/>
                 </div>
-                <p>
+
+                <p class="text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
                     Unlock the power of artificial intelligence to transform your operations,
                     accelerate growth, and stay ahead of the competition with Revocloud's
                     cutting-edge AI solutions.
                 </p>
-                <div class="home-hero-cta">
-                    <a href="#" class="button button-gradient">
-                        Explore Our Solutions <i class="fas fa-arrow-right"></i>
-                    </a>
+                <div class="flex justify-center">
+                    <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg font-semibold rounded-md shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center">
+                        Explore Our Solutions
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-5 h-5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </button>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Stats Section from Home.jsx -->
-        <section class="home-stats-section">
-            <div class="container">
-                <div class="stats-grid">
-                    <!-- Stat 1 -->
-                    <div class="stat-item">
-                        <div class="stat-number">+3-5%</div>
-                        <div class="stat-label">Margin Improvement</div>
-                    </div>
-                    <!-- Stat 2 -->
-                    <div class="stat-item">
-                        <div class="stat-number">+5%-15%</div>
-                        <div class="stat-label">Incremental Sales</div>
-                    </div>
-                    <!-- Stat 3 -->
-                    <div class="stat-item">
-                        <div class="stat-number">up to 33%</div>
-                        <div class="stat-label">Conversion Rate</div>
-                    </div>
-                    <!-- Stat 4 -->
-                    <div class="stat-item">
-                        <div class="stat-number">10%+</div>
-                        <div class="stat-label">Average Transaction Value</div>
-                    </div>
-                    <!-- Stat 5 -->
-                    <div class="stat-item">
-                        <div class="stat-number">3X</div>
-                        <div class="stat-label">Faster Time to Market</div>
-                    </div>
-                    <!-- Stat 6 -->
-                    <div class="stat-item">
-                        <div class="stat-number">5X</div>
-                        <div class="stat-label">Lower Total Cost of Ownership</div>
-                    </div>
+    <!-- Stats Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                <!-- Stat 1 -->
+                <div class="text-center">
+                    <div class="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">+3-5%</div>
+                    <div class="text-gray-600">Margin Improvement</div>
+                </div>
+                <!-- Stat 2 -->
+                <div class="text-center">
+                    <div class="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">+5%-15%</div>
+                    <div class="text-gray-600">Incremental Sales</div>
+                </div>
+                <!-- Stat 3 -->
+                <div class="text-center">
+                    <div class="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">up to 33%</div>
+                    <div class="text-gray-600">Conversion Rate</div>
+                </div>
+                <!-- Stat 4 -->
+                <div class="text-center">
+                    <div class="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">10%+</div>
+                    <div class="text-gray-600">Average Transaction Value</div>
+                </div>
+                <!-- Stat 5 -->
+                <div class="text-center">
+                    <div class="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">3X</div>
+                    <div class="text-gray-600">Faster Time to Market</div>
+                </div>
+                <!-- Stat 6 -->
+                <div class="text-center">
+                    <div class="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">5X</div>
+                    <div class="text-gray-600">Lower Total Cost of Ownership</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Service Pillars Section from Home.jsx -->
-        <section class="home-service-pillars-section">
-            <div class="container">
-                <div class="section-title-centered">
-                    <h2>Our Core Services</h2>
-                    <p>We provide end-to-end AI solutions, from establishing data foundations to deploying AI Agents to accelerate sales, profitability, and cost-to-serve.</p>
-                </div>
-                <div class="pillars-grid">
-                    <!-- Pillar 1: Unified Data Platform -->
-                    <div class="pillar-card">
-                        <div class="pillar-card-icon-header">
-                            <div class="pillar-icon-wrapper">
-                                <i class="fas fa-database"></i> <!-- DatabaseZap placeholder -->
-                            </div>
-                            <div>
-                                <h3>Unified Data Platform</h3>
-                                <p class="pillar-subtitle">Fivetran Partner</p>
-                            </div>
-                        </div>
-                        <ul class="pillar-points">
-                            <li><i class="fas fa-check"></i> Official Fivetran Partner</li>
-                            <li><i class="fas fa-check"></i> Data Foundation Architecture & Roadmap</li>
-                            <li><i class="fas fa-check"></i> Platform-Agnostic Data Pipeline Deployment</li>
-                            <li><i class="fas fa-check"></i> Advanced SAP Modeling & Logic</li>
-                        </ul>
-                    </div>
-                    <!-- Pillar 2: Google Cloud Partner -->
-                    <div class="pillar-card">
-                        <div class="pillar-card-icon-header">
-                            <div class="pillar-icon-wrapper">
-                                <i class="fas fa-cloud-cog"></i> <!-- CloudCog placeholder -->
-                            </div>
-                            <div>
-                                <h3>Google Cloud Partner</h3>
-                                <p class="pillar-subtitle">Certified Partner</p>
-                            </div>
-                        </div>
-                        <ul class="pillar-points">
-                            <li><i class="fas fa-check"></i> Expertise in Google BigQuery & Databases</li>
-                            <li><i class="fas fa-check"></i> Looker Analytics & Visualization</li>
-                            <li><i class="fas fa-check"></i> Custom Data Science & AI Models</li>
-                            <li><i class="fas fa-check"></i> AI Agent Integration with Source Systems</li>
-                        </ul>
-                    </div>
-                    <!-- Pillar 3: AI Agents -->
-                    <div class="pillar-card">
-                        <div class="pillar-card-icon-header">
-                            <div class="pillar-icon-wrapper">
-                                <i class="fas fa-robot"></i> <!-- Bot placeholder -->
-                            </div>
-                            <div>
-                                <h3>AI Agents</h3>
-                                <p class="pillar-subtitle">Decision Engine Solutions</p>
-                            </div>
-                        </div>
-                        <ul class="pillar-points">
-                            <li><i class="fas fa-check"></i> Plug-and-Play AI Agents for Business Decisioning</li>
-                            <li><i class="fas fa-check"></i> Workflow Automation Across Legacy & Modern Systems</li>
-                            <li><i class="fas fa-check"></i> Natural Language Control with Human-in-the-Loop Governance</li>
-                            <li><i class="fas fa-check"></i> Continuously Learning Decision Engine</li>
-                        </ul>
-                    </div>
-                    <!-- Pillar 4: Strategy & Consulting -->
-                    <div class="pillar-card">
-                        <div class="pillar-card-icon-header">
-                            <div class="pillar-icon-wrapper">
-                                <i class="fas fa-lightbulb"></i> <!-- Lightbulb icon -->
-                            </div>
-                            <div>
-                                <h3>Strategy & Consulting</h3>
-                                <p class="pillar-subtitle">Business-Driven AI</p>
-                            </div>
-                        </div>
-                        <ul class="pillar-points">
-                            <li><i class="fas fa-check"></i> End-to-End Business & AI Strategy</li>
-                            <li><i class="fas fa-check"></i> Digital Transformation Roadmaps</li>
-                            <li><i class="fas fa-check"></i> Solution Architecture & Design</li>
-                            <li><i class="fas fa-check"></i> Performance Optimization</li>
-                        </ul>
-                    </div>
-                </div>
+    <!-- Service Pillars Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Our Core Services
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    We provide end-to-end AI solutions, from establishing data foundations to deploying AI Agents to accelerate sales, profitability, and cost-to-serve.
+                </p>
             </div>
-        </section>
 
-        <!-- Value Propositions Section from Home.jsx -->
-        <section class="home-value-props-section">
-            <div class="container">
-                <div class="section-title-centered">
-                    <h2>Why Leading Retailers Choose Revocloud</h2>
-                    <p>Our unique approach to enterprise AI delivers measurable results where others fall short</p>
-                </div>
-                <div class="value-props-grid">
-                    <!-- Proposition 1: Augmented to Autonomous AI Evolution -->
-                    <div class="value-prop-card">
-                        <div class="value-prop-header">
-                            <div class="value-prop-icon-wrapper">
-                                <i class="fas fa-brain"></i> <!-- Brain icon -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
+                <!-- Pillar 1: Unified Data Platform -->
+                <div class="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col rounded-lg bg-white">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><path d="M4 10V4a2 2 0 0 1 2-2h8.5L20 7.5V20a2 2 0 0 1-2 2H4"/><polyline points="14 2 14 8 20 8"/><path d="M4.29 12.29 2.88 11.88A2 2 0 0 0 1.02 14v1A2 2 0 0 0 2.88 17.12l1.41.41"/><path d="m11.12 15.71.41-1.41A2 2 0 0 0 9.66 12H9a2 2 0 0 0-2 2v0a2 2 0 0 0 2 2h.66a2 2 0 0 0 1.86-1.29Z"/><path d="M19.71 12.29 21.12 11.88A2 2 0 0 1 22.98 14v1A2 2 0 0 1 21.12 17.12l-1.41.41"/><path d="m12.88 15.71-.41-1.41A2 2 0 0 1 14.34 12H15a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2h-.66a2 2 0 0 1-1.86-1.29Z"/><path d="M14 22v-2a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M10 10.5V10a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v.5"/><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> <!-- DatabaseZap -->
                             </div>
                             <div>
-                                <h3>Augmented to Autonomous AI Evolution</h3>
-                                <p class="value-prop-description">Unlike static AI tools, our platform evolves with your business - starting with human-in-the-loop recommendations and gradually progressing to fully autonomous decision-making as trust builds.</p>
+                                <h3 class="text-xl font-semibold text-gray-900">Unified Data Platform</h3>
+                                <p class="text-sm font-medium text-blue-600">Fivetran Partner</p>
                             </div>
                         </div>
-                        <ul class="value-prop-benefits">
-                            <li><i class="fas fa-check-circle"></i> Progressive autonomy levels</li>
-                            <li><i class="fas fa-check-circle"></i> Configurable AI governance</li>
-                            <li><i class="fas fa-check-circle"></i> Human oversight controls</li>
-                            <li><i class="fas fa-check-circle"></i> Continuous learning capabilities</li>
-                        </ul>
-                    </div>
-                    <!-- Proposition 2: Legacy System Integration Mastery -->
-                    <div class="value-prop-card">
-                        <div class="value-prop-header">
-                            <div class="value-prop-icon-wrapper">
-                                <i class="fas fa-bolt"></i> <!-- Zap icon placeholder (bolt) -->
-                            </div>
-                            <div>
-                                <h3>Legacy System Integration Mastery</h3>
-                                <p class="value-prop-description">While competitors require expensive system overhauls, we seamlessly integrate with your existing ERP, CRM, and legacy infrastructure through our proprietary connector library.</p>
-                            </div>
-                        </div>
-                        <ul class="value-prop-benefits">
-                            <li><i class="fas fa-check-circle"></i> No system replacement needed</li>
-                            <li><i class="fas fa-check-circle"></i> 200+ pre-built connectors</li>
-                            <li><i class="fas fa-check-circle"></i> Minimal deployment disruption</li>
-                            <li><i class="fas fa-check-circle"></i> Rapid ROI realization</li>
-                        </ul>
-                    </div>
-                    <!-- Proposition 3: Asia-Focused Retail Expertise -->
-                    <div class="value-prop-card">
-                        <div class="value-prop-header">
-                            <div class="value-prop-icon-wrapper">
-                                <i class="fas fa-globe-asia"></i> <!-- Globe icon -->
-                            </div>
-                            <div>
-                                <h3>Asia-Focused Retail Expertise</h3>
-                                <p class="value-prop-description">Built specifically for Asian retail complexities - from fragmented supply chains to local consumer behaviors - giving you competitive advantages that global platforms miss.</p>
-                            </div>
-                        </div>
-                        <ul class="value-prop-benefits">
-                            <li><i class="fas fa-check-circle"></i> Local market intelligence</li>
-                            <li><i class="fas fa-check-circle"></i> Regional compliance built-in</li>
-                            <li><i class="fas fa-check-circle"></i> Multi-language support</li>
-                            <li><i class="fas fa-check-circle"></i> Cultural nuance optimization</li>
-                        </ul>
-                    </div>
-                    <!-- Proposition 4: Proven Decision Engine Platform -->
-                    <div class="value-prop-card">
-                        <div class="value-prop-header">
-                            <div class="value-prop-icon-wrapper">
-                                <i class="fas fa-bullseye"></i> <!-- Target icon -->
-                            </div>
-                            <div>
-                                <h3>Proven Decision Engine Platform</h3>
-                                <p class="value-prop-description">Beyond point solutions, we deliver a unified AI brain that orchestrates decisions across supply chain, pricing, marketing, and customer loyalty - all from one integrated platform.</p>
-                            </div>
-                        </div>
-                        <ul class="value-prop-benefits">
-                            <li><i class="fas fa-check-circle"></i> Cross-functional coordination</li>
-                            <li><i class="fas fa-check-circle"></i> Real-time decision optimization</li>
-                            <li><i class="fas fa-check-circle"></i> Unified data intelligence</li>
-                            <li><i class="fas fa-check-circle"></i> Scalable multi-agent architecture</li>
+                        <ul class="space-y-3 text-gray-600 mt-4 flex-grow">
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                                <span>Official Fivetran Partner</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                                <span>Data Foundation Architecture & Roadmap</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                                <span>Platform-Agnostic Data Pipeline Deployment</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                                <span>Advanced SAP Modeling & Logic</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="revocloud-difference-box">
-                    <h3>The Revocloud Difference</h3>
-                    <p>We combine deep retail knowledge with expertise in implementing modern data stacks and AI agents to drive proven, measurable growth. Our approach bridges the gap between data infrastructure and real-world business outcomes, ensuring technology enables our customer's strategy.</p>
-                    <div class="quote-box">
-                        <p>"We don't believe in hype. We believe in provable ROI."</p>
+                <!-- Pillar 2: Google Cloud Partner -->
+                <div class="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col rounded-lg bg-white">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><path d="M12 22a10 10 0 0 0 8.49-4.89"/><path d="M12 2a10 10 0 0 1 8.49 4.89"/><path d="M22 12H2"/><path d="M16.2 4.8a2.3 2.3 0 0 0-3.35 0c-.96.96-.96 2.51 0 3.47"/><path d="M17.65 9.35A2.3 2.3 0 0 1 21 12.7c0 .96-.78 2.43-1.69 3.35a2.3 2.3 0 0 1-3.35 0c-.96-.96-.96-2.51 0-3.47"/><path d="M7.8 4.8a2.3 2.3 0 0 1 3.35 0c.96.96.96 2.51 0 3.47"/><path d="M6.35 9.35A2.3 2.3 0 0 0 3 12.7c0 .96.78 2.43 1.69 3.35a2.3 2.3 0 0 0 3.35 0c.96-.96.96-2.51 0-3.47"/><path d="M12 12a2.5 2.5 0 0 0-2.5 2.5c0 1.47.5 2.5 2.5 2.5s2.5-1.03 2.5-2.5A2.5 2.5 0 0 0 12 12Z"/></svg> <!-- CloudCog -->
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">Google Cloud Partner</h3>
+                                <p class="text-sm font-medium text-blue-600">Certified Partner</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-gray-600 mt-4 flex-grow">
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                                <span>Expertise in Google BigQuery & Databases</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                                <span>Looker Analytics & Visualization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                                <span>Custom Data Science & AI Models</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                                <span>AI Agent Integration with Source Systems</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pillar 3: AI Agents -->
+                <div class="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col rounded-lg bg-white">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg> <!-- Bot -->
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">AI Agents</h3>
+                                <p class="text-sm font-medium text-blue-600">Decision Engine Solutions</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-gray-600 mt-4 flex-grow">
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                                <span>Plug-and-Play AI Agents for Business Decisioning</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                                <span>Workflow Automation Across Legacy & Modern Systems</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                                <span>Natural Language Control with Human-in-the-Loop Governance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                                <span>Continuously Learning Decision Engine</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pillar 4: Strategy & Consulting -->
+                <div class="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col rounded-lg bg-white">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.7 10.7 18 9.7 18 8.5c0-1.4-1.1-2.5-2.5-2.5S13 7.1 13 8.5c0 .4.1.8.3 1.2"/><path d="M12 6.5A2.5 2.5 0 0 1 14.5 4c1.4 0 2.5 1.1 2.5 2.5"/><path d="M9 14c-.2-1-.7-1.7-1.5-2.5C6.3 10.7 6 9.7 6 8.5c0-1.4 1.1-2.5 2.5-2.5S11 7.1 11 8.5c0 .4-.1.8-.3 1.2"/><path d="M12 6.5A2.5 2.5 0 0 0 9.5 4C8.1 4 7 5.1 7 6.5"/><path d="M12 13h.01"/><path d="M17.8 17.8a2.5 2.5 0 0 1 0-3.5c1.4-1.4 2.2-3.1 2.2-4.8h0c0-1.2-.4-2.3-1-3.2"/><path d="M6.2 17.8a2.5 2.5 0 0 0 0-3.5C4.8 12.9 4 11.2 4 9.5h0c0-1.2.4-2.3 1-3.2"/><path d="M12 22v-2.5"/><path d="m4.2 4.2 1.4 1.4"/><path d="M18.4 5.6 17 7"/></svg> <!-- Lightbulb -->
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">Strategy & Consulting</h3>
+                                <p class="text-sm font-medium text-blue-600">Business-Driven AI</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-gray-600 mt-4 flex-grow">
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                                <span>End-to-End Business & AI Strategy</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                                <span>Digital Transformation Roadmaps</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                                <span>Solution Architecture & Design</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                                <span>Performance Optimization</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- CTA Section from Home.jsx -->
-        <section class="home-cta-section">
-            <div class="container">
-                <h2>Ready to Transform Your Business?</h2>
-                <p>Join hundreds of companies that have already revolutionized their operations with Revocloud AI.</p>
-                <a href="contact.html" class="button button-cta-hollow"> <!-- Link to contact.html -->
-                    Get Started Today <i class="fas fa-arrow-right"></i>
+    <!-- Value Proposition Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Why Leading Retailers Choose Revocloud
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our unique approach to enterprise AI delivers measurable results where others fall short
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Proposition 1: Augmented to Autonomous AI Evolution -->
+                <div class="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg bg-white">
+                    <div class="p-8">
+                        <div class="flex items-start space-x-4 mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5V6H9.5a2.5 2.5 0 0 1 0-5Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5V6h2.5a2.5 2.5 0 0 0 0-5Z"/><path d="M12 6V5"/><path d="M4.5 8A2.5 2.5 0 0 0 2 10.5V12h2.5a2.5 2.5 0 0 0 0-5Z"/><path d="M19.5 8A2.5 2.5 0 0 1 22 10.5V12h-2.5a2.5 2.5 0 0 1 0-5Z"/><path d="M12 18v-1.5"/><path d="M7 12v2.5a2.5 2.5 0 0 0 5 0V12"/><path d="M17 12v2.5a2.5 2.5 0 0 1-5 0V12"/><path d="M12 12h0"/><path d="M9.5 15A2.5 2.5 0 0 0 12 17.5V19h-2.5a2.5 2.5 0 0 0 0-5Z"/><path d="M14.5 15A2.5 2.5 0 0 1 12 17.5V19h2.5a2.5 2.5 0 0 1 0-5Z"/><path d="M12 22v-2.5"/></svg> <!-- Brain -->
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-3">Augmented to Autonomous AI Evolution</h3>
+                                <p class="text-gray-600 leading-relaxed">
+                                    Unlike static AI tools, our platform evolves with your business - starting with human-in-the-loop recommendations and gradually progressing to fully autonomous decision-making as trust builds.
+                                </p>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 mt-4">
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-3 flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Progressive autonomy levels
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-3 flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Configurable AI governance
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-3 flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Human oversight controls
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-3 flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Continuous learning capabilities
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Proposition 2: Legacy System Integration Mastery -->
+                <div class="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg bg-white">
+                    <div class="p-8">
+                        <div class="flex items-start space-x-4 mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> <!-- Zap -->
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-3">Legacy System Integration Mastery</h3>
+                                <p class="text-gray-600 leading-relaxed">
+                                    While competitors require expensive system overhauls, we seamlessly integrate with your existing ERP, CRM, and legacy infrastructure through our proprietary connector library.
+                                </p>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 mt-4">
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-3 flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                No system replacement needed
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-3 flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                200+ pre-built connectors
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-3 flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Minimal deployment disruption
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-3 flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Rapid ROI realization
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Proposition 3: Asia-Focused Retail Expertise -->
+                <div class="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg bg-white">
+                    <div class="p-8">
+                        <div class="flex items-start space-x-4 mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> <!-- Globe -->
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-3">Asia-Focused Retail Expertise</h3>
+                                <p class="text-gray-600 leading-relaxed">
+                                    Built specifically for Asian retail complexities - from fragmented supply chains to local consumer behaviors - giving you competitive advantages that global platforms miss.
+                                </p>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 mt-4">
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-3 flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Local market intelligence
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-3 flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Regional compliance built-in
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-3 flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Multi-language support
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-3 flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Cultural nuance optimization
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Proposition 4: Proven Decision Engine Platform -->
+                <div class="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg bg-white">
+                    <div class="p-8">
+                        <div class="flex items-start space-x-4 mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> <!-- Target -->
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-3">Proven Decision Engine Platform</h3>
+                                <p class="text-gray-600 leading-relaxed">
+                                    Beyond point solutions, we deliver a unified AI brain that orchestrates decisions across supply chain, pricing, marketing, and customer loyalty - all from one integrated platform.
+                                </p>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 mt-4">
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-3 flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Cross-functional coordination
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-3 flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Real-time decision optimization
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-3 flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Unified data intelligence
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500 mr-3 flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Scalable multi-agent architecture
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <div class="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                        The Revocloud Difference
+                    </h3>
+                    <p class="text-lg text-gray-600 mb-6">
+                        We combine deep retail knowledge with expertise in implementing modern data stacks and AI agents to drive proven, measurable growth. Our approach bridges the gap between data infrastructure and real-world business outcomes, ensuring technology enables our customer's strategy.
+                    </p>
+                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6 mt-6 text-center">
+                        <p class="text-2xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                            "We don't believe in hype. We believe in provable ROI."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+                Ready to Transform Your Business?
+            </h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                Join hundreds of companies that have already revolutionized their operations with Revocloud AI.
+            </p>
+            <div class="flex justify-center">
+                <a href="contact.html" class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg font-semibold rounded-md shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center">
+                    Get Started Today
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-5 h-5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
             </div>
-        </section>
-        <!-- Other sections will be added here : REMOVED as this is the last content section -->
-    </main>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 Revocloud. All rights reserved.</p>
-    </footer>
-
-    <!-- Prism.js JS (must be loaded after the code blocks) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <!-- Optional: Load specific languages if not using autoloader -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
-    <!-- Add more languages as needed -->
 </body>
 </html>
